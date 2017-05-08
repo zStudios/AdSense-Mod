@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+		<id>zStudios:AdSenseMod</id>
+	<version>1.0</version>
+
+	<file name="$themedir/Display.template.php">
+		<operation>
+			<search position="Replace"><![CDATA[// Show the post itself, finally!
+		echo ']]></search>
+			<add><![CDATA[
+		
+	//AdsMod At Display.template.php
+			if (!empty($modSettings['toppostads_enable']) && !empty($modSettings['toppostads_text']))
+	        if ($message['id'] == $context['first_message'])
+			{
+	echo $txt['ad_text'],$modSettings['toppostads_text'];
+	}	
+		// Show the post itself, finally!
+		echo ']]></add>
+		</operation>
+        </file>
+
+	<file name="$themedir/BoardIndex.template.php">
+		<operation>
+			<search position="Replace"><![CDATA[// Show the news fader?  (assuming there are things to show...)]]></search>
+			<add><![CDATA[	// AdSense Mod zStudios.cf
+		if ($modSettings['headerads_enable'] && !empty($modSettings['headerads_text']))
+			{
+	echo'
+	<div class="adsensemodzstudios_header">',$txt['ad_text'],$modSettings['headerads_text'],'</div>';
+	}
+		// Show the news fader?  (assuming there are things to show...)
+		]]></add>
+		</operation>
+		<operation>
+			<search position="Replace"><![CDATA[// This is the "Recent Posts" bar.]]></search>
+			<add><![CDATA[// AdSense Mod zStudios.cf
+		if (!empty($modSettings['footerads_enable']) && !empty($modSettings['footerads_text']))
+			{
+
+			echo '
+	<div class="adsensemodzstudios_footer">',$txt['ad_text'],$modSettings['footerads_text'],'</div>';
+	}
+		// This is the "Recent Posts" bar.
+		]]></add>
+		</operation>
+        </file>
+        <file name="$sourcedir/ManageSettings.php">
+		<operation>
+			<search position="before"><![CDATA[		// Mod authors, add any settings UNDER this line. Include a comma at the end of the line and don't remove this statement!!]]></search>
+			<add><![CDATA[
+			// zStudios AdSenseMod header
+			array('headerads_description'),
+			array('check', 'headerads_enable'),
+			array('large_text', 'headerads_text'),
+			// zStudios AdSenseMod footer
+			array('check', 'footerads_enable'),
+			array('large_text', 'footerads_text'),
+			//zStudios AdSenseMod at top post
+			array('check', 'toppostads_enable'),
+			array('large_text', 'toppostads_text'),
+			]]></add>
+		</operation>
+	    </file>
+		<file name="$themedir/css/index.css">
+				<operation>
+			<search position="end" />
+				<add><![CDATA[
+.adsensemodzstudios_header {
+    width:90%;
+	display: table;
+	margin: 0 auto;
+	background: #f0f4f7;
+	text-align:center;
+	border-radius: 5px;
+
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 11px;
+    padding-top: 11px;
+
+	color: #222;
+	font-weight:600;
+}
+.adsensemodzstudios_footer {
+width:90%;
+	display: table;
+	margin: 0 auto;
+	background: #f0f4f7;
+	text-align:center;
+	border-radius: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 11px;
+    padding-top: 11px;
+	color: #222;
+	font-weight:600;
+}
+]]></add>
+		</operation>
+			</file>
+	    </modification>

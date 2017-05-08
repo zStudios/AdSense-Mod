@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+	<id>zStudios:AdSenseMod</id>
+	
+	<name>AdSense Mod</name>
+	
+	<version>1.0</version>
+
+	<file name="$themedir/languages/Modifications.english.php">
+		<operation>
+			<search position="end" />
+				<add><![CDATA[
+// zStudios AdSenseMod.
+$txt['headerads_enable'] = 'Enable AdSense in Board Index';
+$txt['headerads_text'] = '(paste Adsense code)';
+$txt['footerads_enable'] = 'Enable AdSense in above Stats center';
+$txt['footerads_text'] = '(paste Adsense code)';
+$txt['toppostads_enable'] = 'Enable AdSense at the top of a thread';
+$txt['toppostads_text'] = '(paste Adsense code)';
+$txt['ad_text'] = 'Advertisement</br>';
+
+]]></add>
+		</operation>
+	</file>
+
+	</modification>

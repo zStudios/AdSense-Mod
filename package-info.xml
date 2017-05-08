@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	
+	<id>zStudios:AdSenseMod</id>
+	
+	<name>AdSense Mod</name>
+	
+	<version>1.0</version>
+
+	
+	<type>modification</type>
+
+	
+	<install for="2.0 - 2.0.99">
+		<readme>readme.htm</readme>
+		<modification>install.xml</modification>
+		<modification>languages.xml</modification>	
+		<redirect type="inline" url="index.php?action=admin;area=modsettings">You are being automatically redirected to the Modifications Page, AdSense Mod settings...</redirect>
+	</install>
+
+	
+	<uninstall for="2.0 - 2.0.99">
+		<modification reverse="true">install.xml</modification>
+		<modification type="file" reverse="true">languages.xml</modification>
+	</uninstall>
+</package-info>
