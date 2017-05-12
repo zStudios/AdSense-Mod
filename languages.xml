@@ -12,13 +12,13 @@
 			<search position="end" />
 				<add><![CDATA[
 // zStudios AdSenseMod.
-$txt['headerads_enable'] = 'Enable AdSense in Board Index';
-$txt['headerads_text'] = '(paste Adsense code)';
-$txt['footerads_enable'] = 'Enable AdSense in above Stats center';
-$txt['footerads_text'] = '(paste Adsense code)';
-$txt['toppostads_enable'] = 'Enable AdSense at the top of a thread';
-$txt['toppostads_text'] = '(paste Adsense code)';
-$txt['ad_text'] = 'Advertisement</br>';
+$txt['ad1_enable'] = 'Enable: Above News fader';
+$txt['ad2_enable'] = 'Enable: Above stats center';
+$txt['ad3_enable'] = 'Enable: Above first thread';
+$txt['ad4_enable'] = 'Enable: Above Quick Reply Textbox';
+$txt['ad_text'] = '<center><b>Advertisement</b></center>';
+$txt['txt_ads_id'] = 'Your AdSense Campaign ID ';
+$txt['txt_pub_id'] = 'Your AdSense PUB ID ';
 
 ]]></add>
 		</operation>
