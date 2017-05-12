@@ -11,11 +11,22 @@
 			<add><![CDATA[
 		
 	//AdsMod At Display.template.php
-			if (!empty($modSettings['toppostads_enable']) && !empty($modSettings['toppostads_text']))
+			if (!empty($modSettings['ad3_enable'])
 	        if ($message['id'] == $context['first_message'])
-			{
-	echo $txt['ad_text'],$modSettings['toppostads_text'];
-	}	
+	{
+   echo'
+   <center> demo
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Siplhes.ml -->
+<ins class="adsbygoogle adsensemod"
+     style="display:inline-block;"
+     data-ad-client="ca-pub-',$modSettings['txt_pub_id'],'"
+     data-ad-slot="',$modSettings['txt_ads_id'],'"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>demo</center>
+';
+	}
 		// Show the post itself, finally!
 		echo ']]></add>
 		</operation>
@@ -25,10 +36,20 @@
 		<operation>
 			<search position="Replace"><![CDATA[// Show the news fader?  (assuming there are things to show...)]]></search>
 			<add><![CDATA[	// AdSense Mod zStudios.cf
-		if ($modSettings['headerads_enable'] && !empty($modSettings['headerads_text']))
+		if ($modSettings['ad1_enable'])
 			{
-	echo'
-	<div class="adsensemodzstudios_header">',$txt['ad_text'],$modSettings['headerads_text'],'</div>';
+   echo'
+   <center> demo
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Siplhes.ml -->
+<ins class="adsbygoogle adsensemod"
+     style="display:inline-block;"
+     data-ad-client="ca-pub-',$modSettings['txt_pub_id'],'"
+     data-ad-slot="',$modSettings['txt_ads_id'],'"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>demo</center>
+';
 	}
 		// Show the news fader?  (assuming there are things to show...)
 		]]></add>
@@ -36,11 +57,22 @@
 		<operation>
 			<search position="Replace"><![CDATA[// This is the "Recent Posts" bar.]]></search>
 			<add><![CDATA[// AdSense Mod zStudios.cf
-		if (!empty($modSettings['footerads_enable']) && !empty($modSettings['footerads_text']))
+		if (!empty($modSettings['ad2_enable'])
 			{
 
 			echo '
-	<div class="adsensemodzstudios_footer">',$txt['ad_text'],$modSettings['footerads_text'],'</div>';
+   echo'
+   <center> demo
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Siplhes.ml -->
+<ins class="adsbygoogle adsensemod"
+     style="display:inline-block;"
+     data-ad-client="ca-pub-',$modSettings['txt_pub_id'],'"
+     data-ad-slot="',$modSettings['txt_ads_id'],'"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>demo</center>
+';
 	}
 		// This is the "Recent Posts" bar.
 		]]></add>
@@ -50,16 +82,12 @@
 		<operation>
 			<search position="before"><![CDATA[		// Mod authors, add any settings UNDER this line. Include a comma at the end of the line and don't remove this statement!!]]></search>
 			<add><![CDATA[
-			// zStudios AdSenseMod header
-			array('headerads_description'),
-			array('check', 'headerads_enable'),
-			array('large_text', 'headerads_text'),
-			// zStudios AdSenseMod footer
-			array('check', 'footerads_enable'),
-			array('large_text', 'footerads_text'),
-			//zStudios AdSenseMod at top post
-			array('check', 'toppostads_enable'),
-			array('large_text', 'toppostads_text'),
+			array('text','txt_ads_id'),
+			array('text','txt_pub_id'),
+                        array('check', 'ad1_enable'),
+                        array('check', 'ad2_enable'),
+                        array('check', 'ad3_enable'),
+			array('check', 'ad4_enable'),
 			]]></add>
 		</operation>
 	    </file>
@@ -97,6 +125,10 @@ width:90%;
 	color: #222;
 	font-weight:600;
 }
+
+.adsensemod { width: 320px; height: 100px; }
+@media (min-width:500px) { .adsensemod { width: 468px; height: 60px; } }
+@media (min-width:800px) { .adsensemod { width: 728px; height: 90px; } }
 ]]></add>
 		</operation>
 			</file>
